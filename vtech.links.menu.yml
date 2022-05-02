@@ -1,0 +1,25 @@
+vtech.settings.developers:
+  title: 'Developers'
+  parent: system.admin_config_development
+  description: 'Configure the display of the developer badge.'
+  route_name: vtech.settings.developers
+
+vtech.opcache:
+  title: 'OPcache'
+  parent: system.admin_config_development
+  description: 'Reset the contents of the opcode cache.'
+  route_name: vtech.opcache
+
+vtech.toolbar.virdini:
+  title: 'Virdini.com'
+  url: 'https://virdini.com'
+  menu_name: admin
+  parent: admin_toolbar_tools.help
+  weight: -99
+
+vtech.design_adjustment:
+  title: 'Design Adjustment'
+  menu_name: admin
+  route_name: vtech.design_adjustment
+  parent: vtech.toolbar.virdini
+  weight: 999

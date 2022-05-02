@@ -1,0 +1,14 @@
+name: Virdini Tech
+type: module
+description: Module for a project supported by Virdini.
+package: Virdini
+configure: vtech.developers_settings
+
+dependencies:
+  - admin_toolbar:admin_toolbar_tools
+
+'interface translation project': vtech
+'interface translation server pattern': https://localize.virdini.com/drupal/vtech.%language.po
+
+core_version_requirement: ^9
+version: '9.0.0'

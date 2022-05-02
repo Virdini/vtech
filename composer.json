@@ -1,0 +1,15 @@
+{
+  "name": "virdini/vtech",
+  "description": "Module for a project supported by Virdini.",
+  "type": "drupal-custom-module",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://virdini.com",
+  "support": {
+    "email": "tech@virdini.com",
+    "source": "https://github.com/Virdini/vtech"
+  },
+  "require": {
+    "drupal/core-recommended": "^9",
+    "drupal/admin_toolbar": "^3.1"
+  }
+}

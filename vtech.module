@@ -1,0 +1,78 @@
+<?php
+
+/**
+ * Implements hook_toolbar().
+ */
+function vtech_toolbar_alter(&$items) {
+  if (isset($items['admin_toolbar_tools'])) {
+    $items['admin_toolbar_tools']['#attached']['library'][] = 'vtech/toolbar.icon';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function vtech_theme() {
+  return [
+    'developers' => [
+      'variables' => [],
+    ],
+    'vtech_adjustment_text' => [
+      'render element' => '',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function vtech_preprocess_page(array &$variables) {
+  $variables['developers'] = ['#theme' => 'developers'];
+}
+
+/**
+ * Implements template_preprocess_HOOK().
+ */
+function template_preprocess_developers(array &$variables) {
+  $config = \Drupal::config('vtech.settings.developers');
+  vbase_add_cacheable_dependency($variables, $config);
+
+  // Developer badge logo settings.
+  $variables['logo'] = $config->get('logo');
+  $variables['width'] = $config->get('width');
+
+  // Developer badge label display setting.
+  $variables['label_display'] = $config->get('label');
+
+  // Developer badge label and title.
+  $key = (int)$config->get('developed') . '-' . (int)$config->get('maintained');
+  switch ($key) {
+    case '1-0':
+      $variables['title'] = t('Website was developed by Virdini');
+      $variables['label'] = t('Developed');
+      break;
+
+    case '0-1':
+      $variables['title'] = t('Website maintained by Virdini');
+      $variables['label'] = t('Maintained');
+      break;
+
+    default:
+      $variables['title'] = t('Website was developed and maintained by Virdini');
+      $variables['label'] = t('Developed and maintained');
+      break;
+  }
+
+  // Add attributes to link.
+  $variables['attributes']['target'] = '_blank';
+  if ($config->get('nofollow')) {
+    $variables['attributes']['rel'] = 'nofollow';
+  }
+
+  // Add title to link.
+  $variables['attributes']['title'] = $variables['title'];
+
+  // Link to the developer's site.
+  $variables['attributes']['href'] = 'https://virdini.com';
+
+}

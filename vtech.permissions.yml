@@ -1,0 +1,10 @@
+vtech developers:
+  title: 'Developers'
+  description: 'Configure the display of the developer badge.'
+
+vtech opcache:
+  title: 'OPcache'
+  description: 'Reset the contents of the opcode cache.'
+
+vtech design adjustment page:
+  title: 'Virdini Design Adjustment Page'

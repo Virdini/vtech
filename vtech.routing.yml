@@ -1,0 +1,56 @@
+vtech.settings.developers:
+  path: '/admin/config/development/developers'
+  defaults:
+    _form: '\Drupal\vtech\Form\DevelopersSettings'
+    _title: 'Developers'
+  requirements:
+    _permission: 'vtech developers'
+
+vtech.opcache:
+  path: '/admin/config/development/virdini-opcache'
+  defaults:
+    _form: '\Drupal\vtech\Form\OPcache'
+    _title: 'OPcache'
+  requirements:
+    _permission: 'vtech opcache'
+
+# Design Adjustment Pages
+vtech.design_adjustment:
+  path: '/virdini-design-adjustment'
+  defaults:
+    _controller: '\Drupal\vtech\Controller\DesignAdjustment::page'
+    _title: 'Virdini Design Adjustment Page'
+  requirements:
+    _permission: 'vtech design adjustment page'
+
+vtech.design_adjustment_tab_1:
+  path: '/virdini-design-adjustment/tab_1'
+  defaults:
+    _controller: '\Drupal\vbase\Controller\EmptyPage::build'
+    _title: 'Virdini Design Adjustment Page'
+  requirements:
+    _permission: 'vtech design adjustment page'
+
+vtech.design_adjustment_tab_1_1:
+  path: '/virdini-design-adjustment/tab_1/1'
+  defaults:
+    _controller: '\Drupal\vbase\Controller\EmptyPage::build'
+    _title: 'Virdini Design Adjustment Page'
+  requirements:
+    _permission: 'vtech design adjustment page'
+
+vtech.design_adjustment_tab_1_2:
+  path: '/virdini-design-adjustment/tab_1/2'
+  defaults:
+    _controller: '\Drupal\vbase\Controller\EmptyPage::build'
+    _title: 'Virdini Design Adjustment Page'
+  requirements:
+    _permission: 'vtech design adjustment page'
+
+vtech.design_adjustment_tab_1_3:
+  path: '/virdini-design-adjustment/tab_1/3'
+  defaults:
+    _controller: '\Drupal\vbase\Controller\EmptyPage::build'
+    _title: 'Virdini Design Adjustment Page'
+  requirements:
+    _permission: 'vtech design adjustment page'
